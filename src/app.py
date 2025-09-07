@@ -1,6 +1,12 @@
 ﻿def find_refs(x):
-    return x * 2
+    # changed behavior
+    return x * 3
 
 def use():
-    # first caller
-    return find_refs(3)
+    # call moved to a different line to produce a ref change
+    a = 10
+    return find_refs(a)
+
+def other():
+    # second caller (new reference)
+    return find_refs(5)
